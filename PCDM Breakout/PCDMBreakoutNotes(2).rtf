@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww17460\viewh14080\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf0 PCDM Breakout\
+\
+book example: {\field{\*\fldinst{HYPERLINK "http://ark.digitalcommonwealth.org/ark:/50959/cv43pc026"}}{\fldrslt http://ark.digitalcommonwealth.org/ark:/50959/cv43pc026}}\
+\
+PCDM wiki: {\field{\*\fldinst{HYPERLINK "https://github.com/duraspace/pcdm/wiki"}}{\fldrslt https://github.com/duraspace/pcdm/wiki}} \
+	- domain model that focuses on structural metadata but meant to be general enough when completed to model objects in whatever way is needed (flexible and interoperable)\
+	- {\field{\*\fldinst{HYPERLINK "http://pcdm.org"}}{\fldrslt http://pcdm.org}} - Models ontology, Use Extension, Works Extension, and Rights Extension\
+	- focus on core Models Ontology to start, there is the concept of PCDM 1.0 vs 2.0 and there are things that might be undecided\
+	- Works and Filesets diagram in Hydra::Works on PCDM wiki > Shared Resources > Sample PCDM Diagrams\
+	- start off with core model - if we get through that we can contemplate modeling with one or more extensions\
+\
+Core Classes\
+AlternateOrder\
+Collection (can be ordered using ORE Proxy class and IANA ordering properties)\
+File (only used with fileOf or hasFile properties)\
+Object (can be ordered using ORE Proxy class and IANA ordering properties)\
+\
+Core Properties\
+fileOf (File fileOf Object)\
+hasFile (Object hasFile File)\
+hasMember (Aggregation hasMember Aggregation)\
+hasRelatedObject (Aggregation hasRelatedObject Object)\
+memberOf (Aggregation memberOf Aggregation)\
+relatedObjectOf (Object relatedObjectOf Aggregation)\
+ore:proxyFor\
+ore:proxyIn\
+iana:first\
+iana:last\
+iana:next\
+iana:previous\
+\
+Works Classes\
+FileSet\
+Range\
+TopRange\
+Work\
+\
+Use Classes\
+ExtractedText\
+IntermediateFile\
+OriginalFile\
+PreservationMasterFile\
+ServiceFile\
+ThumbnailImage\
+Transcript\
+\
+Rights Properties\
+rightsOverride\
+rightsOverrideExpiration\
+\
+- dealing with pages tied together as single book in physical page order and there aren\'92t any other structures defined (that we can parse)\
+- looks like there is no OCR or full text available and downloading original retrieves jp2 only, but it looks like each page has a thumbnail image and one larger .jpg image and zoom function loads jp2; so 2 derivatives and 1 master file per page\
+\
+Use Case 1\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}Structure these pages so they are part of a book using PCDM\
+{\listtext	\'95	}If possible, identify the different types of files (master and derivatives)\
+{\listtext	\'95	}Look at Core Models ontology and Use extension\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Use Case 2\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 {\listtext	\'95	}Apply page order to the structure\
+{\listtext	\'95	}Use Optional Ordering Construction\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Use Case 3\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	\'95	}If we want to show these pages in a page turning view, we need to present the various sizes together (thumb, medium, and jp2)\
+{\listtext	\'95	}How do we identify different groupings of files to show together in these views?\
+{\listtext	\'95	}Look at Works extension with caveats about published ontology and reality\
+}
